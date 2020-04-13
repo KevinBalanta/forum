@@ -110,3 +110,9 @@ flex: 1;
   display: block;
   background-color: transparent;
 }
+
+.link-account {
+  margin-top: 2rem;
+  display: block;
+  opacity: .7;
+}
