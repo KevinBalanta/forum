@@ -17,7 +17,7 @@ class Forum extends Component {
             const currentMessages = snapshot.val();
             
             if(currentMessages !== null ) {
-                this.setState({
+                this.setState({            
                     messages: currentMessages 
                 })
             }

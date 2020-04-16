@@ -41,38 +41,34 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
-
 <script src="/__/firebase/6.2.0/firebase.js"></script>
 
-<script>
 
+<script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyBwsSSiPdL3yQIoGn0wbfSVY_-BNEHWSY0",
-    authDomain: "forum-492a5.firebaseapp.com",
-    databaseURL: "https://forum-492a5.firebaseio.com",
-    projectId: "forum-492a5",
-    storageBucket: "forum-492a5.appspot.com",
-    messagingSenderId: "52571742038",
-    appId: "1:52571742038:web:24b3886829d7451e86c0f7",
-    measurementId: "G-J56D97H3MJ"
+    apiKey: "AIzaSyBm5JZJjG4w8Vc_SrHajKmAgG-bo1Ov8uk",
+    authDomain: "forum-d947e.firebaseapp.com",
+    databaseURL: "https://forum-d947e.firebaseio.com",
+    projectId: "forum-d947e",
+    storageBucket: "forum-d947e.appspot.com",
+    messagingSenderId: "629026099177",
+    appId: "1:629026099177:web:0c4f992880e43bae6f8578",
+    measurementId: "G-Q33JRESFBE"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-
-//  const newMessage =  {
-//           id: this.state.messages.length,
-//            text: this.state.message
-//        };
-//        firebase.database().ref(`messages/${newMessage.id}`).set(newMessage);
+  firebase.analytics();
 </script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

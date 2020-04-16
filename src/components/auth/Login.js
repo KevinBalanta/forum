@@ -1,6 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
-
 
 const Login = (props) => {
 
@@ -14,6 +13,13 @@ const Login = (props) => {
         message : ''
     })
     
+    useEffect(() => {
+    
+        return () => {
+            sessionStorage.removeItem('firstName');
+            sessionStorage.removeItem('email');
+        }
+    })
     
     const {email, password} = user;
     
@@ -58,6 +64,7 @@ const Login = (props) => {
 
 
             }else{
+                window.firebase.database().ref(`users/${user.email.replace(/\./g, ",")}`).remove();
                 changeError({
                     error: true,
                     message: 'El email no se encuentra registrado'

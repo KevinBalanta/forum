@@ -94,11 +94,10 @@ const Register = (props) => {
                     confirmPassword : ''
                 })
 
-
             }else{
                 window.firebase.database().ref(`users/${user.email.replace(/\./g, ",")}`).set(userFirebase)
-                sessionStorage.setItem('email', userFromFirebase.email);
-                sessionStorage.setItem('firstName', userFromFirebase.firstName);
+                sessionStorage.setItem('email', userFirebase.email);
+                sessionStorage.setItem('firstName', userFirebase.firstName);
                 props.history.push('/home');
             }
         });
