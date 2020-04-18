@@ -5,7 +5,7 @@ const Register = (props) => {
 
 
     sessionStorage.removeItem('user');
-    
+
     const [user, saveUser] = useState({
         firstName: '',
         lastName: '',
@@ -81,10 +81,10 @@ const Register = (props) => {
             validUntil: validUntil,
             active : active
         }
-        window.firebase.database().ref( `users/${user.email.replace(/\./g, ",")}`).on('value', snapshot=> {
-            const userFromFirebase = snapshot.val();
 
-            if(userFromFirebase !== null ) {
+        window.firebase.firestore().collection('users').doc(user.email).get().then(function(doc){
+            if (doc.exists) {
+
                 changeError({
                     error: true,
                     message: 'El email ya se encuentra registrado'
@@ -96,16 +96,12 @@ const Register = (props) => {
                     password : '',
                     confirmPassword : ''
                 })
-
-            }else{
-                window.firebase.database().ref(`users/${user.email.replace(/\./g, ",")}`).set(userFirebase)
+            } else {
+                window.firebase.firestore().collection("users").doc(userFirebase.email).set(userFirebase)
                 sessionStorage.setItem('user', JSON.stringify(userFirebase));
                 props.history.push('/home');
             }
         });
-
-
-
     }
 
     return (

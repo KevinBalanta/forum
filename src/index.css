@@ -57,6 +57,18 @@ h1, h2 {
   border-radius: 1rem;
 }
 
+.container-new-message {
+  padding: 4rem 3rem;
+  max-width: 700px;
+  width: 95%;
+  background-color: var(--blanco);
+  border-radius: 1rem;
+}
+
+.textarea {
+  font-size: 1.6rem;
+}
+
 .element-form {
   display: flex;
   margin-bottom: 2rem;
