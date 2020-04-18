@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 
 const Login = (props) => {
+    
+
+    sessionStorage.removeItem('user');
 
     const [user, saveUser] = useState({
         email: '',
@@ -12,15 +15,7 @@ const Login = (props) => {
         error: false,
         message : ''
     })
-    
-    useEffect(() => {
-    
-        return () => {
-            sessionStorage.removeItem('firstName');
-            sessionStorage.removeItem('email');
-        }
-    })
-    
+
     const {email, password} = user;
     
     const onChange = (e) => {
@@ -52,8 +47,7 @@ const Login = (props) => {
                 const bcrypt = require('../../utils/custom-bcrypt');
 
                 if(bcrypt.compare(user.password, userFromFirebase.password)) {
-                    sessionStorage.setItem('email', userFromFirebase.email);
-                    sessionStorage.setItem('firstName', userFromFirebase.firstName);
+                    sessionStorage.setItem('user', JSON.stringify(userFromFirebase));
                     props.history.push('/home');
                 }else {
                     changeError({

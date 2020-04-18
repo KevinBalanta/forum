@@ -10,9 +10,8 @@ class Forum extends Component {
             messages: []
         }
     }
-
+    
     componentDidMount(){
-
         window.firebase.database().ref('messages/').on('value', snapshot=> {
             const currentMessages = snapshot.val();
             
@@ -32,6 +31,7 @@ class Forum extends Component {
 
         return (
             <div className='container'>
+                <h1>Foro</h1>
                  {messages.map(message => (
                 <Message key={message.id} 
                 message={message}/>
