@@ -96,8 +96,7 @@ const Register = (props) => {
 
             }else{
                 window.firebase.database().ref(`users/${user.email.replace(/\./g, ",")}`).set(userFirebase)
-                sessionStorage.setItem('email', userFirebase.email);
-                sessionStorage.setItem('firstName', userFirebase.firstName);
+                sessionStorage.setItem('user', JSON.stringify(userFirebase));
                 props.history.push('/home');
             }
         });
@@ -107,7 +106,7 @@ const Register = (props) => {
     }
 
     return (
-        <div className="form-login">
+        <div className="form-login">npm 
             <div className="container-form">
                 <h1>Registrarse</h1>
                 <form onSubmit={onSubmit}>

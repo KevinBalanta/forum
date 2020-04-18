@@ -16,6 +16,7 @@ function App() {
         <Route exact path = "/" component={Login}></Route>
         <Route exact path = "/register" component={Register}></Route>
         <Route exact path = "/home" component={Home}></Route>
+        
       </Switch>
     </Router>
   );

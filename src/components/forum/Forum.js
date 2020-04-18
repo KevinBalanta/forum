@@ -32,6 +32,7 @@ class Forum extends Component {
 
         return (
             <div className='container'>
+                <h1>Foro</h1>
                  {messages.map(message => (
                 <Message key={message.id} 
                 message={message}/>
