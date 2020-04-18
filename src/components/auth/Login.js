@@ -2,7 +2,9 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 
 const Login = (props) => {
+    
 
+    sessionStorage.removeItem('user');
 
     const [user, saveUser] = useState({
         email: '',
