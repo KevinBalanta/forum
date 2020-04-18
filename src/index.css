@@ -5,7 +5,7 @@
   --gris3: #1a202d;
   --negro: #000000;
   --headingFont:'Raleway', sans-serif;
-  --textFont:  'Roboto', sans-serif;
+  --textFont:  'Lato', sans-serif;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -14,16 +14,18 @@ html {
   box-sizing: border-box;
   height: 100%;
   font-size: 62.5%; 
+
 }
 
 body {
   min-height: 100%;
-  background: #000428;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #200122;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6f0000, #200122);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6f0000, #200122); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
   font-size: 16px; 
   font-size: 1.6rem;
   font-family: var(--textFont);
+
 }
 
 
@@ -36,9 +38,10 @@ h1, h2 {
 }
 
 .form-login {
-  background: #000428;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+  background: #200122;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6f0000, #200122);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6f0000, #200122); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   height: 100vh;
   min-height: 800px;
   display: flex;
@@ -78,7 +81,7 @@ flex: 1;
   margin-top: 2rem;
   font-family: var(--headingFont);
   padding: 1.5rem;
-  font-size: 1.4;
+  font-size: 1.4rem;
   font-weight: 400;
   border-radius: .5rem;
   border: none;
@@ -88,7 +91,7 @@ flex: 1;
   cursor: pointer;
 }
 .btn-primary {
-  background-color:#004e92;
+  background-color:#6f0000;
   color: var(--blanco);
 }
 .btn-primary:hover {

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
 
 const Profile = (props) => {
 
@@ -72,21 +71,29 @@ const Profile = (props) => {
             const bcrypt = require('../../utils/custom-bcrypt');
             const hashPassword = bcrypt.hash(user.password);
             
-            saveUser({
-                ...user,
-                password: hashPassword
-            })
+
+            const userFirebase = {
+
+                firstName: user.firstName,
+                lastName: user.lastName,
+                email: user.email,
+                password: hashPassword,
+                active : user.active
+            }
+
+            console.log(user)
+            
 
             let refUser = window.firebase.database().ref(`users/${user.Saved}`)
             refUser.remove();
 
-            window.firebase.database().ref(`users/${user.email.replace(/\./g, ",")}`).set(user)
+            window.firebase.database().ref(`users/${user.email.replace(/\./g, ",")}`).set(userFirebase)
 
             changeEnable({
                 isDisabled: true,
                 valueButton: "Editar informacion"
             })
-
+            console.log(user)
         }
 
     }

@@ -106,7 +106,7 @@ const Register = (props) => {
     }
 
     return (
-        <div className="form-login">npm 
+        <div className="form-login">
             <div className="container-form">
                 <h1>Registrarse</h1>
                 <form onSubmit={onSubmit}>
