@@ -32,13 +32,10 @@ class Forum extends Component {
     render() {
 
         const { messages } = this.state;
-        console.log("-----------------------------------")
-        console.log(messages)
-        console.log("-----------------------------------")
 
         return (
             <div className='container'>
-                <h1>Foro</h1>
+                <h1 className="m-4 title-forum">Publicaciones del Foro</h1>
                  {messages.map(message => (
                 <Message key={message.id} 
                 message={message}/>

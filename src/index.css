@@ -131,3 +131,26 @@ flex: 1;
   display: block;
   opacity: .7;
 }
+
+.ccm_forum_ctn--list {
+    margin: 0 -20px 20px -20px;
+}
+
+.message {
+
+  background-color: #2f3848 ;
+  color: white;
+  border-radius: 20px;
+  
+
+}
+
+.size-image {
+  height: 80px;
+  width: 80px;
+  
+}
+
+.title-forum {
+  color: white;
+}

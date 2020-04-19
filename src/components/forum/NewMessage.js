@@ -65,7 +65,15 @@ const NewMessage = (props) => {
                 replies : replies
             }
             window.firebase.firestore().collection("messages").doc(docRef.id).set(messageFirebase)
-            props.history.push('/home');
+            
+            saveMessage({
+                id: '',
+                title: '',
+                description: '',
+                date: '',
+                user: JSON.parse(sessionStorage.getItem('user')),
+                replies : []
+            })
         })
         .catch(function(error) {
             console.error("Error adding document: ", error);
@@ -97,7 +105,7 @@ const NewMessage = (props) => {
                             value={description}
                             placeholder="Escribe la descripcion de la publicacion"
                             onChange={onChange}
-                            rows="7"/>
+                            rows="5"/>
                     </div>
 
                     <div className="element-form">
