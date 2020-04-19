@@ -41,9 +41,9 @@ const Login = (props) => {
             return;
         }
 
-        window.firebase.database().ref( `users/${user.email.replace(/\./g, ",")}`).on('value', snapshot=> {
-            const userFromFirebase = snapshot.val();
-            if(userFromFirebase !== null ) {
+        window.firebase.firestore().collection('users').doc(user.email).get().then(function(doc){
+            if (doc.exists) {
+                const userFromFirebase = doc.data();
                 const bcrypt = require('../../utils/custom-bcrypt');
 
                 if(bcrypt.compare(user.password, userFromFirebase.password)) {
@@ -54,11 +54,10 @@ const Login = (props) => {
                         error: true,
                         message: 'La contraseña es incorrecta'
                     })
-                }   
-
-
+                }
             }else{
-                window.firebase.database().ref(`users/${user.email.replace(/\./g, ",")}`).remove();
+                window.firebase.firestore().collection('users').doc(user.email).delete()
+
                 changeError({
                     error: true,
                     message: 'El email no se encuentra registrado'

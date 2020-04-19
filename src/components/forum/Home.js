@@ -3,6 +3,7 @@ import Forum from "./Forum";
 import { Route, Redirect, Link } from "react-router-dom";
 import Profile from "./Profile";
 import Search from "./Search";
+import NewMessage from "./NewMessage";
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
   const FORUM = 'forum'
   const PROFILE = 'profile'
   const SEARCH = 'search'
+  const NEW_MESSAGE = 'newMessage'
 
   const [page, changePage] = useState({
      actualState : FORUM 
@@ -44,6 +46,12 @@ const Home = () => {
     })
   }
 
+  const changeToNewMessage = () => {
+    changePage({
+      actualState : NEW_MESSAGE
+    })
+  }
+
   return (
     <Route>
       {
@@ -52,7 +60,7 @@ const Home = () => {
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 
             <button className="btn btn-outline-danger my-2 my-sm-0" onClick={changeToForum}>Forum</button>
-            
+
             <div className="collapse navbar-collapse ml-5" id="navbarSupportedContent">
             <form className="form-inline mr-auto" onSubmit={onSubmitSearch}>
                 <input
@@ -67,6 +75,8 @@ const Home = () => {
                   Buscar
                 </button>
               </form>
+
+              <button className="btn btn-danger my-2 my-sm-0 m-5" onClick={changeToNewMessage}>Publicar Mensaje</button>
     
               <ul className="navbar-nav my-2 my-lg-0">
                 <li>
@@ -81,7 +91,8 @@ const Home = () => {
             </div>
           </nav>
         { (page.actualState === FORUM) ? <Forum/> : 
-          (page.actualState === PROFILE) ? <Profile/> : <Search/> 
+          (page.actualState === PROFILE) ? <Profile/> :
+          (page.actualState === SEARCH) ? <Search/> : <NewMessage/>
         }
 
         </div>
