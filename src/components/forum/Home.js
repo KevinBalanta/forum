@@ -96,7 +96,7 @@ const Home = () => {
         }
 
         </div>
-        ) : (<Redirect to="/" /> )
+        ) : sessionStorage.getItem('admin') ? (<Redirect to="/home-admin" /> ) : (<Redirect to="/" /> ) 
       }
 
     </Route>   
