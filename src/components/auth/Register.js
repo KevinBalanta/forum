@@ -12,7 +12,6 @@ const Register = (props) => {
         email: '',
         password: '',
         confirmPassword: '',
-        validUntil: '',
         active : true
     })
 
@@ -21,7 +20,7 @@ const Register = (props) => {
         message : ''
     })
     
-    const {firstName, lastName, email, password, confirmPassword, validUntil, active} = user;
+    const {firstName, lastName, email, password, confirmPassword, active} = user;
     
     const onChange = (e) => {
         saveUser({
@@ -78,7 +77,6 @@ const Register = (props) => {
             lastName: lastName,
             email: email,
             password: hashPassword,
-            validUntil: validUntil,
             active : active
         }
 
