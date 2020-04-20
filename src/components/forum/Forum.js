@@ -39,6 +39,15 @@ class Forum extends Component {
             messageError: '' 
          })
     }
+    
+    getEditMessage = (message) => {
+        this.props.editMessage(message)
+    }
+
+    
+    getDeleteMessage = (message) => {
+        this.componentDidMount()
+    }
 
     onChange = (e) => {
         this.setState({
@@ -122,9 +131,7 @@ class Forum extends Component {
 
                 </div>
 
-
-
-                     <form onSubmit={this.onSubmit}>
+                     <form onSubmit={this.onSubmit} >
                             <div className="element-form">
                                 <textarea className="form-control textarea"
                                     id="comment"
@@ -148,7 +155,8 @@ class Forum extends Component {
                     <h1 className="m-4 title-forum">Publicaciones del Foro</h1>
                     {messages.map(message => (
                         <Message key={message.id}
-                            message={message} parentCallback={this.getSelectedMessage} />
+                            message={message} parentCallback={this.getSelectedMessage} 
+                            parentCallbackEdit={this.getEditMessage} parentCallbackDelete={this.getDeleteMessage} />
                     ))}
                 </div>
             );

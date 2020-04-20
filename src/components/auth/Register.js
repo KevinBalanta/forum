@@ -145,7 +145,11 @@ const Register = (props) => {
                     <div className="element-form">
                         <label htmlFor="password">Contraseña</label>
                         <input
-                            type="password"
+                            type="p	const onClickMessage = e => {
+                                e.preventDefault();
+                                props.parentCallback(props.message)
+                                
+                            }assword"
                             id="password"
                             name="password"
                             value = {password}

@@ -13,6 +13,7 @@ const Home = () => {
   const PROFILE = 'profile'
   const SEARCH = 'search'
   const NEW_MESSAGE = 'newMessage'
+  const EDIT_MESSAGE = 'editMessage'
 
 
   const [page, changePage] = useState({
@@ -69,6 +70,15 @@ const Home = () => {
     })
   }
 
+  const editMessageHome = (message) => {
+    if(message){
+       changePage({
+        actualState: EDIT_MESSAGE,
+        message : message
+       })
+    }
+  }
+
 
 
   return (
@@ -109,9 +119,10 @@ const Home = () => {
                 </ul>
               </div>
             </nav>
-            {(page.actualState === FORUM) ? <Forum key={keys.keyForum} /> :
-              (page.actualState === PROFILE) ? <Profile /> :
-                (page.actualState === SEARCH) ? <Search firstName={search.inputSearch} key={keys.keySearch}/> : <NewMessage />
+            {(page.actualState === FORUM) ? <Forum key={keys.keyForum} editMessage={editMessageHome} /> :
+             (page.actualState === PROFILE) ? <Profile /> :
+             (page.actualState === SEARCH) ? <Search firstName={search.inputSearch} key={keys.keySearch}/> :
+             (page.actualState === NEW_MESSAGE)  ?  <NewMessage /> : <NewMessage message={page.message}/>
             }
 
           </div>

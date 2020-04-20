@@ -13,6 +13,20 @@ const Message = (props) => {
 		
 	}
 
+	const onClickEdit = e => {
+		e.preventDefault();
+		props.parentCallbackEdit(props.message)
+		
+	}
+
+	const onClickDelete = e => {
+		e.preventDefault();
+		props.parentCallbackDelete(props.message)
+		window.firebase.firestore().collection("messages").doc(props.message.id).delete()
+		
+	}
+	const ownMessage = (props.message.user.email === JSON.parse(sessionStorage.getItem('user')).email);
+
 	return (
 
 		<div className="media message mb-1">
@@ -20,10 +34,16 @@ const Message = (props) => {
 			<div className="media-body  p-3">
 				<a className="mt-0 btn-outline-danger" href=""  onClick={onClickMessage} ><strong>{props.message.title}</strong></a>
 
-				<h4>{props.message.description}</h4>	
+				<h4>{props.message.description}</h4>
+				{ownMessage &&
+                            <a className="mt-2 mr-5 pt-1 pb-1 pl-5 pr-5 btn btn-danger" role="alert" onClick={onClickEdit}>  Editar  </a>
+                    }
+				{ownMessage &&
+                            <a className="mt-2 pt-1 pb-1 pl-5 pr-5 btn btn-danger" role="alert" onClick={onClickDelete}>  Eliminar  </a>
+                    }
 			</div>
 			<div className="m-4 center-block">
-			<h4 className="mb-4 align-middle"> {props.message.replies.length} respuestas</h4>
+			<a className="mb-4 align-middle" href="/" onClick={onClickMessage}> {props.message.replies.length} respuestas</a>
 			<h5>{props.message.user.firstName + " " + props.message.user.lastName} </h5>
 			<h5>{formatDate}</h5>
 
