@@ -1,9 +1,9 @@
 :root {
-  --blanco: #ffffff;
-  --gris1: #edf2f6;
-  --gris2: #2f3848;
-  --gris3: #1a202d;
-  --negro: #000000;
+  --white: #ffffff;
+  --gray1: #edf2f6;
+  --gray2: #2f3848;
+  --gray3: #1a202d;
+  --black: #000000;
   --headingFont:'Raleway', sans-serif;
   --textFont:  'Lato', sans-serif;
 }
@@ -34,7 +34,7 @@ h1, h2 {
   font-weight: 900;
   margin: 0 0 4rem 0;
   text-align: center;
-  color: var(--gris2);
+  color: var(--gray2);
 }
 
 .form-login {
@@ -53,7 +53,7 @@ h1, h2 {
   padding: 5rem 3rem;
   max-width: 500px;
   width: 95%;
-  background-color: var(--blanco);
+  background-color: var(--white);
   border-radius: 1rem;
 }
 
@@ -61,7 +61,7 @@ h1, h2 {
   padding: 4rem 3rem;
   max-width: 700px;
   width: 95%;
-  background-color: var(--blanco);
+  background-color: var(--white);
   border-radius: 1rem;
 }
 
@@ -104,20 +104,20 @@ flex: 1;
 }
 .btn-primary {
   background-color:#6f0000;
-  color: var(--blanco);
+  color: var(--white);
 }
 .btn-primary:hover {
-  background: var(--gris3);
+  background: var(--gray3);
 }
 .btn-secundary {
-  background-color: var(--gris1);
+  background-color: var(--gray1);
 }
 .btn-block {
   display: block;
   width: 100%;
 }
 .btn-submit:hover {
-  background-color: var(--gris2);
+  background-color: var(--gray2);
 }
 .btn-blank {
   margin: 0;
@@ -154,3 +154,14 @@ flex: 1;
 .title-forum {
   color: white;
 }
+
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 2px;
+  color: white;
+} 

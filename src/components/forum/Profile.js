@@ -83,11 +83,7 @@ const Profile = (props) => {
 
             console.log(user)
             
-
-            let refUser = window.firebase.database().ref(`users/${user.Saved}`)
-            refUser.remove();
-
-            window.firebase.database().ref(`users/${user.email.replace(/\./g, ",")}`).set(userFirebase)
+            window.firebase.firestore().collection("users").doc(userFirebase.email).set(userFirebase)
 
             changeEnable({
                 isDisabled: true,

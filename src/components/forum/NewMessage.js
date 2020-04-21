@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom';
 
 const NewMessage = (props) => {
     
@@ -10,7 +9,23 @@ const NewMessage = (props) => {
         date: '',
         user: JSON.parse(sessionStorage.getItem('user')),
         replies : []
+        
     })
+
+    useEffect(() => {
+        if(props.message){
+            console.log("entro")
+            saveMessage({
+                id: props.message.id,
+                title: props.message.title,
+                description: props.message.description,
+                date: props.message.date,
+                user: JSON.parse(sessionStorage.getItem('user')),
+                replies : props.message.replies
+            })
+        }
+    
+      }, []);
 
     const [error, changeError] = useState({
         error: false,
@@ -47,6 +62,11 @@ const NewMessage = (props) => {
             date : window.firebase.firestore.Timestamp.fromDate(new Date())
         })
 
+        if(message.id !== ""){
+            window.firebase.firestore().collection("messages").doc(message.id).delete()
+        }
+        
+
         window.firebase.firestore().collection("messages").add({
             message
         })
@@ -78,6 +98,7 @@ const NewMessage = (props) => {
         .catch(function(error) {
             console.error("Error adding document: ", error);
         });
+        alert("Publicacion realizada exitosamente")
     }
 
     return (
