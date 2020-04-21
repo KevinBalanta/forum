@@ -38,6 +38,17 @@ class UserResults extends Component{
     }
 
 
+    async activationUser(email, value){
+
+        //console.log('lol', email , value)
+        window.firebase.firestore().collection("users").doc(email).update({"active" : value});
+
+
+         setTimeout(() => {
+             this.updateUsers();
+           }, 1000);
+
+    }
 
     
 
@@ -117,7 +128,7 @@ class UserResults extends Component{
                                 <h3 className="media-heading">lastName: {user.lastName}</h3>
                                 
                             </div>
-                        <button className={user.active ? "btn btn-danger" : "btn btn-success"}>{user.active ? "Desactivar" : "Activar"}</button>
+                        <button className={user.active ? "btn btn-danger" : "btn btn-success"}  onClick={() => this.activationUser(user.email, !user.active)}>{user.active ? "Desactivar" : "Activar"}</button>
                           <button className="btn btn-dark ml-5" value={user.email} onClick={e => this.deleteAction(e.target.value)}>Borrar</button>
                           <button className="btn btn-warning ml-5">Ver</button>
                          
