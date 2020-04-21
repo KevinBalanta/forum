@@ -130,7 +130,7 @@ class UserResults extends Component{
                             </div>
                         <button className={user.active ? "btn btn-danger" : "btn btn-success"}  onClick={() => this.activationUser(user.email, !user.active)}>{user.active ? "Desactivar" : "Activar"}</button>
                           <button className="btn btn-dark ml-5" value={user.email} onClick={e => this.deleteAction(e.target.value)}>Borrar</button>
-                          <button className="btn btn-warning ml-5">Ver</button>
+                          
                          
                           </div>
                         ))
