@@ -55,22 +55,28 @@ class UserResults extends Component{
 
     deleteUser(email){
 
-        
+        let hasMessages = false;
 
         window.firebase.firestore().collection("messages").where("user.email", "==", email).get()
         .then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
                 // doc.data() is never undefined for query doc snapshots
                 if(doc.exists){
-                    alert('posee mensajes asociados, no se puede eliminar');
+                    hasMessages = true;
+                    
                 }
             });
+            if(hasMessages){
+                alert('posee mensajes asociados, no se puede eliminar');
+            }
+            else{
             alert('Eliminado Exitosamente!');
             window.firebase.firestore().collection('users').doc(email).delete().then(function() {
                 //alert('Eliminado Exitosamente!');
             }).catch(function(error) {
                 console.error("Error removing document: ", error);
             });
+        }
             
             
         })
