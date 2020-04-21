@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/forum/static/css/main.b75ac214.chunk.css",
+    "main.js": "/forum/static/js/main.d5812091.chunk.js",
+    "main.js.map": "/forum/static/js/main.d5812091.chunk.js.map",
+    "runtime-main.js": "/forum/static/js/runtime-main.f5eea032.js",
+    "runtime-main.js.map": "/forum/static/js/runtime-main.f5eea032.js.map",
+    "static/js/2.8db618b5.chunk.js": "/forum/static/js/2.8db618b5.chunk.js",
+    "static/js/2.8db618b5.chunk.js.map": "/forum/static/js/2.8db618b5.chunk.js.map",
+    "index.html": "/forum/index.html",
+    "precache-manifest.904069ea550308cc533c863e17a9bcc0.js": "/forum/precache-manifest.904069ea550308cc533c863e17a9bcc0.js",
+    "service-worker.js": "/forum/service-worker.js",
+    "static/css/main.b75ac214.chunk.css.map": "/forum/static/css/main.b75ac214.chunk.css.map",
+    "static/js/2.8db618b5.chunk.js.LICENSE.txt": "/forum/static/js/2.8db618b5.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f5eea032.js",
+    "static/js/2.8db618b5.chunk.js",
+    "static/css/main.b75ac214.chunk.css",
+    "static/js/main.d5812091.chunk.js"
+  ]
+}
